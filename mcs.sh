@@ -1,14 +1,31 @@
 #!/bin/bash
+#######################################################################################
+# English                                                                             #
+# with editor ( nano or vi) a new file name to create "mcs.sh"                        #
+# copy the script into the file "mcs.sh" and make with "chmod 777 mcs.sh" executable  #
+# script start with "./mcs.sh "                                                       #
+#######################################################################################
+# German                                                                              #
+# mit Editor (nano oder vi) eine neue Datei mit dem namen mcs.sh anlegen              #
+# Skript reinkopieren und mit "chmod 777 mcs.sh" ausfuehrbar machen                   #
+# Skript starten mit "./mcs.sh"                                                       #
+#######################################################################################
+
 apt-get update
+echo "update = done"
 apt-get install screen -y
-apt-get install nano -y
+echo "install screen = done"
 apt-get install openjdk-7-jre-headless -y
+echo "install openjdk-7-jre-headless = done"
 
 mkdir /home/programme/mcs
 cd /home/programme/mcs
 
 wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.3/minecraft_server.1.8.3.jar 
+echo "download = done"
 mv minecraft_server.1.8.3.jar minecraft_server.jar
+
+sleep 60
 
 echo "#!/bin/bash" > start_mcs.sh
 echo "cd /home/programme/mcs" >> start_mcs.sh
@@ -21,6 +38,7 @@ chmod -R 777 /home/programme/mcs/start_mcs.sh
 chmod -R 777 /homr/programme/mcs/stop_mcs.sh
 
 ./start_mcs.sh
+echo "pleas wait a moment..."
 sleep 180
 ./stop_mcs.sh
 
@@ -40,4 +58,8 @@ echo "server-port=25565" >> sever.properties
 echo "allow-flight=false" >> sever.properties
 echo "white-list=false" >> sever.properties
 
+echo "server.properties = configured"
 ./start_mcs.sh
+echo "please wait a moment..."
+sleep 60
+echo "now connect you to your server and play minecraft ;)"

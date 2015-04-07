@@ -29,7 +29,7 @@ echo "screen -A -m -d -S minecraft_server java -Xms512M -Xmx1024M -jar minecraft
 
 # create the file "stop_mcs.sh" and write into
 echo "#!/bin/bash" > stop_mcs.sh
-echo "screen -A -m -d -S minecraft_server -X quit" >> stop_mcs.sh
+echo "screen -S minecraft_server -X quit" >> stop_mcs.sh
 
 # make the scripts startable
 chmod -R 777 /home/programme/mcs/start_mcs.sh

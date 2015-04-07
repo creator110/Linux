@@ -62,4 +62,4 @@ echo "server.properties = configured"
 ./start_mcs.sh
 echo "please wait a moment..."
 sleep 60
-echo "now connect you to your server and play minecraft ;)"
+echo "now connect to your server and play minecraft ;)"
